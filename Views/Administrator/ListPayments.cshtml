@@ -1,0 +1,113 @@
+﻿@model IEnumerable<LoanManagementSystem.Models.Payment>
+
+@{
+    ViewData["Title"] = "Payment";
+    ViewBag.AdminPaymentActive = "active";
+}
+
+<h1>Recent Payments</h1>
+
+<p>
+    <a asp-action="PayeeCustomers" class="btn btn-info">Make Payment</a>
+</p>
+<table class="table table-responsive table-striped table-hover w-100 border-0">
+    <thead class="thead-dark">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.PayedDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PayedMonth)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PayedAmount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RemainingLoanAmount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RemainingMonthPayment)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PenaltyPaymentAmount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NextPaymentDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LoanStatus)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LoanCovered)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UserId)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @item.PayedDate.ToString("dddd mmmm-yyyy")
+                </td>
+                <td>
+                    @item.PayedMonth.ToString("MMMM")
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PayedAmount) ETB
+                </td>
+                <td>
+                    @if(item.RemainingLoanAmount <= 0){
+                        <span class="text-success">Fully Covered</span>
+                    }else{
+                        <span class=""> @Math.Round(item.RemainingLoanAmount,2) ETB</span>
+                    }
+                </td>
+                <td>
+                    @if(item.RemainingMonthPayment <= 0){
+                        <span class="text-success">Paid</span>
+                    }else{
+                        <span class="text-warning">@item.RemainingMonthPayment</span>
+                    }
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PenaltyPaymentAmount) ETB
+
+                </td>
+               <td>
+                    @if(item.RemainingLoanAmount <= 0){
+                        @item.NextPaymentDate.ToString("MMMM d")
+                    }else{
+                        <span class="text-dark">Payment Has been Closed</span>
+                    }
+                 
+               </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LoanStatus)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LoanCovered)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UserId)
+                </td>
+                <td>
+                    <a asp-action="PaymentDetail" asp-route-id="@item.Id" class="btn btn-primary">Details</a>
+                </td>
+            </tr>
+
+
+        }
+        @{
+            if (Model.Count() == 0)
+            {
+                <tr>
+                    <td class="w-50" colspan="14">Empty Database</td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>

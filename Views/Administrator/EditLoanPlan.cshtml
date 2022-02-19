@@ -1,0 +1,45 @@
+﻿@model LoanManagementSystem.Models.LoanPlan
+
+@{
+    ViewData["Title"] = "Edit";
+    ViewBag.LoanPlanActive = "active";
+
+}
+
+<h1>Edit</h1>
+
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="EditLoanPlan">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="Month" class="control-label"></label>
+                <input asp-for="Month" class="form-control" />
+                <span asp-validation-for="Month" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Interest" class="control-label"></label>
+                <input asp-for="Interest" class="form-control" />
+                <span asp-validation-for="Interest" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MonthlyOverDuePenalty" class="control-label"></label>
+                <input asp-for="MonthlyOverDuePenalty" class="form-control" />
+                <span asp-validation-for="MonthlyOverDuePenalty" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-success" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a class="btn btn-info" asp-action="ViewLoanPlan">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

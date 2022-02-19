@@ -1,0 +1,84 @@
+﻿@model LoanManagementSystem.Models.Payment
+
+@{
+    ViewData["Title"] = "Payment";
+}
+
+<h1>Make Payment</h1>
+
+<hr />
+<div class="row">
+    @{
+
+        if (Model.LoanCovered)
+        {
+            <div class="alert alert-success w-100" role="alert">
+                <h4 class="alert-heading">Loan is Covered and Closed</h4>
+                <p>This Loan Has been Covered on @Model.PayedDate</p>
+                <div>
+                    <a asp-action="Index" class="btn btn-info">Back to List</a>
+                </div>
+            </div>
+        }
+    }
+<div class="col-md-4">
+
+
+    @{
+        if (!Model.LoanCovered)
+        {
+            <form asp-action="MakeFinalPayment">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <input type="hidden" asp-for="PayedDate" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <input type="hidden" asp-for="PayedMonth" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label asp-for="PayedAmount" class="control-label"></label>
+                    <input asp-for="PayedAmount" value="" class="form-control" />
+                    <span asp-validation-for="PayedAmount" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="hidden" asp-for="RemainingLoanAmount" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <input type="hidden" asp-for="RemainingMonthPayment" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <input type="hidden" asp-for="PenaltyPaymentAmount" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <input type="hidden" asp-for="NextPaymentDate" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <input type="hidden" asp-for="LoanStatus" class="form-control" />
+                </div>
+                <div class="form-group form-check">
+                    <input type="hidden" class="form-check-input" asp-for="LoanCovered" />
+
+                </div>
+                <div class="form-group">
+                    <input type="hidden" asp-for="UserId" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Pay" class="btn btn-success" />
+                </div>
+            </form>
+            <div>
+                <a asp-action="Index">Back to List</a>
+            </div>
+        }
+    }
+    
+
+
+</div>
+</div>
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,31 @@
+﻿@model LoanManagementSystem.Models.UserAccount
+
+@{
+    ViewData["Title"] = "Details";
+    ViewBag.UsersActive = "active";
+
+}
+
+<h1>Details</h1>
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.User_Name)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.User_Name)
+        </dd>
+        <dt class = "col-sm-2">
+            User Type
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.IsAdmin)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="EditUsers" class="btn btn-primary" asp-route-id="@Model.Id">Edit</a> 
+    <a class="btn btn-info" asp-action="Users">Back to List</a>
+</div>

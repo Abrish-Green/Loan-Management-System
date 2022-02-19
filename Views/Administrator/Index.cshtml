@@ -1,0 +1,99 @@
+﻿@using Microsoft.AspNetCore.Http;
+
+@{
+    ViewData["Title"] = "Administrator";
+    ViewBag.AdminHomeActive = "active";
+}
+
+
+
+<div class="content-wrapper">
+    <!-- /.content-header -->
+    <!-- Main content -->
+    <section class="content">
+        <div class="container-fluid ">
+            <!-- Small boxes (Stat box) -->
+            <div class="row">
+                <div class="col-lg-3 col-6">
+                    <!-- small box -->
+                    <div class="small-box bg-info p-4 shadow p-3 mb-5 rounded">
+                        <div class="inner">
+                                @if(TempData["todaysLoanRequest"].Equals(0))
+                                {
+                                    <h4> No Request Yet </h4>
+                                }else{
+                                    <h3>@TempData["todaysLoanRequest"]</h3>
+                                }
+
+                            
+            
+                            <p>Today Requests</p>
+                        </div>
+                        <div class="icon">
+                            <i class="ion ion-bag"></i>
+                        </div>
+                    </div>
+                </div>
+                <!-- ./col -->
+                <div class="col-lg-3 col-6">
+                    <!-- small box -->
+                    <div class="small-box bg-success p-4 shadow p-3 mb-5 rounded">
+                        <div class="inner">
+                             @if(TempData["CoveredLoan"].Equals(0))
+                                {
+                                    <h4> No Request Yet </h4>
+                                }else{
+                                    <h3>@TempData["CoveredLoan"]</h3>
+                                }
+    
+                            <p>Covered Loans</p>
+                        </div>
+                        <div class="icon">
+                            <i class="ion ion-stats-bars"></i>
+                        </div>
+                    </div>
+                </div>
+                <!-- ./col -->
+                <div class="col-lg-3 col-6">
+                    <!-- small box -->
+                    <div class="small-box bg-warning p-4 shadow p-3 mb-5 rounded">
+                        <div class="inner">
+                             @if(TempData["registedUsers"].Equals(0))
+                                {
+                                    <h4> No Request Yet </h4>
+                                }else{
+                                    <h3>@TempData["registedUsers"]</h3>
+                                }
+            
+                            <p>Registered Customers</p>
+                        </div>
+                        <div class="icon">
+                            <i class="ion ion-person-add"></i>
+                        </div>
+                    </div>
+                </div>
+                <!-- ./col -->
+                <div class="col-lg-3 col-6">
+                    <!-- small box -->
+                    <div class="small-box bg-danger p-4 shadow p-3 mb-5 rounded">
+                        <div class="inner">
+                            
+                            @if(TempData["activeLoans"].Equals(0))
+                                {
+                                    <h4> No Request Yet </h4>
+                                }else{
+                                    <h3>@TempData["activeLoans"]</h3>
+                                }
+                            <p>Active Loan</p>
+                        </div>
+                        <div class="icon">
+                            <i class="ion ion-pie-graph"></i>
+                        </div>
+                    </div>
+                </div>
+                <!-- ./col -->
+            </div>
+            <!-- /.row -->
+        </div>
+    </section>
+</div>

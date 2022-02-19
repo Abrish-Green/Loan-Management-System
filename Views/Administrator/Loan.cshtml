@@ -1,0 +1,148 @@
+﻿@model IEnumerable<LoanManagementSystem.Models.Loan>
+
+@{
+    ViewData["Title"] = "View Loan";
+    ViewBag.AdminLoanActive = "active";
+}
+
+<h1>Manage Loan Request</h1>
+
+<table class="table table-responsive table-striped table-hover w-100 border-0">
+    <thead class="thead-dark">
+
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LastName)
+            </th>
+           
+            
+            <th>
+                @Html.DisplayNameFor(model => model.Phone)
+            </th>
+           
+            <th>
+                @Html.DisplayNameFor(model => model.Salary)
+            </th>
+           
+            <th>
+                @Html.DisplayNameFor(model => model.loanPurpose)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.loanAmount)
+            </th>
+            <th>       Loan Status
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.loanDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TotalPayableAmount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MonthlyPayableAmount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MonthlyPenalty)
+            </th>
+            
+            <th>
+                @Html.DisplayNameFor(model => model.UserId)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LastName)
+                </td>
+
+
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Phone)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Salary)
+                    ETB
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.loanPurpose)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.loanAmount)
+                    ETB
+                </td>
+                <td>
+                    @if (item.LoanGrant == "REJECTED")
+                    {
+                        <span class="badge badge-danger p-2">@item.LoanGrant</span>
+                    }
+                    else if (item.LoanGrant == "ACCEPTED")
+                    {
+                        <span class="badge badge-success p-2">@item.LoanGrant</span>
+                    }
+                    else
+                    {
+                        <span class="badge badge-warning p-2">@item.LoanGrant</span>
+                    }
+                </td>
+                <td>
+                    @item.loanDate.ToString("MMMM dddd dd")
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TotalPayableAmount)
+                    ETB
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MonthlyPayableAmount) ETB
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MonthlyPenalty) ETB
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.UserId)
+                </td>
+                <td>
+                    @if (item.LoanGrant == "REJECTED")
+                    {
+                        <a asp-action="AcceptLoan" class="btn btn-primary m-1 p-1 w-100" asp-route-id="@item.Id">Accept</a>
+                    }
+                    else if (item.LoanGrant == "ACCEPTED")
+                    {
+                        <a asp-action="RejectLoan" class="btn btn-danger m-1 p-1 w-100" asp-route-id="@item.Id">Reject</a>
+                    }
+                    else
+                    {
+                        <a asp-action="AcceptLoan" class="btn btn-primary m-1 p-1 w-100" asp-route-id="@item.Id">Accept</a>
+                        <a asp-action="RejectLoan" class="btn btn-danger m-1 p-1 w-100" asp-route-id="@item.Id">Reject</a>
+
+                    }
+
+                    <a asp-action="DetailLoan" class="btn btn-info m-1 p-1 w-100" asp-route-id="@item.Id">Details</a>
+
+
+                </td>
+            </tr>
+        }
+        @{
+            if (Model.Count() == 0)
+            {
+                <tr>
+                    <td class="w-50" colspan="14">Empty Database</td>
+                </tr>
+                }
+            }
+        </tbody>
+</table>

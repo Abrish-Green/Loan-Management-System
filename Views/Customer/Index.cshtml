@@ -1,0 +1,132 @@
+﻿
+@{
+    ViewData["Title"] = "Customer";
+}
+
+<div class="content-wrapper">
+    <!-- /.content-header -->
+    <!-- Main content -->
+    <section class="content">
+        <div class="container-fluid ">
+            <!-- Small boxes (Stat box) -->
+            <div class="row">
+                <div class="col-lg-3 col-6">
+                    <!-- small box -->
+                    <div class="small-box bg-info p-4 shadow p-3 mb-5 rounded">
+                        <div class="inner">
+                              
+                            @if(TempData["totalRemainingLoan"] == null){
+                               <h3>No Active Payment</h3>
+                            }else{
+                                 @if(Math.Round(Convert.ToDouble(TempData["totalRemainingLoan"].ToString()),2) <0){
+                                    <h4>There is No Next Payment</h4>
+                                }else{
+                                    <h3>@TempData["nextPayment"]</h3>
+
+                                }
+                            }
+
+                           <p>Next Payment</p>
+
+
+                        </div>
+                        <div class="icon">
+                            <i class="ion ion-bag"></i>
+                        </div>
+                    </div>
+                </div>
+                <!-- ./col -->
+                <div class="col-lg-3 col-6">
+                    <!-- small box -->
+                    <div class="small-box bg-danger p-4 shadow p-3 mb-5 rounded">
+                        <div class="inner">
+                            @if(!TempData["monthlyPayment"].Equals(0)){
+                                   <h3>@TempData["monthlyPayment"] ETB</h3>
+                            }else{
+                               <h4>There is No Payment</h4>
+                               
+                            }
+
+                                <p>Monthly Payment</p>
+                        </div>
+                        <div class="icon">
+                            <i class="ion ion-stats-bars"></i>
+                        </div>
+                    </div>
+                </div>
+                <!-- ./col -->
+                <div class="col-lg-3 col-6">
+                    <!-- small box -->
+                    <div class="small-box bg-warning p-4 shadow p-3 mb-5 rounded">
+                        <div class="inner">
+
+                            @if(TempData["totalRemainingLoan"] == null){
+                                <h3>No Active Payment</h3>
+                            }
+                            else
+                            {
+                                
+                                @if(Math.Round(Convert.ToDouble(TempData["totalRemainingLoan"].ToString()),2) <0){
+                                    <h3>Loan Fully Paid</h3>
+                                    }else{
+                                        <h3>@Math.Round(Convert.ToDouble(TempData["totalRemainingLoan"].ToString()),2) ETB</h3>
+                                    }
+                            }
+                           
+                              
+                
+                            <p>Total Remaining Amount of Money</p>
+                        </div>
+                        <div class="icon">
+                            <i class="ion ion-person-add"></i>
+                        </div>
+                    </div>
+                </div>
+                <!-- ./col -->
+                <div class="col-lg-3 col-6">
+                    <!-- small box -->
+                    @{
+                                                var bg = "";
+
+                        @if(TempData["loanStatus"] != null){
+                                @if(TempData["loanStatus"].ToString() == "ACCEPTED")
+                                {
+                                    bg = "bg-success";
+                                }
+                                else if(TempData["loanStatus"].ToString() == "PENDING")
+                                {
+                                    bg = "bg-info";
+                                }
+                                else
+                                {
+                                    bg = "bg-danger";
+                                }
+
+                            }    
+                        }
+                           
+                    <div class="small-box @bg p-4 shadow p-3 mb-5 rounded">
+                        <div class="inner">
+                            @if(TempData["loanStatus"] == null){
+                                <h3>No Active Loan</h3>
+                            }
+                            else
+                            {
+                                <h3>@TempData["loanStatus"]</h3>
+                            }
+                            
+                            
+                            
+                            <p>Loan Status</p>
+                        </div>
+                        <div class="icon">
+                            <i class="ion ion-pie-graph"></i>
+                        </div>
+                    </div>
+                </div>
+                <!-- ./col -->
+            </div>
+            <!-- /.row -->
+        </div>
+    </section>
+</div>

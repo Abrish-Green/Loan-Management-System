@@ -1,0 +1,37 @@
+﻿@model LoanManagementSystem.Models.LoanPlan
+
+@{
+    ViewData["Title"] = "Details";
+    ViewBag.LoanPlanActive = "active";
+
+}
+
+<h1>Details</h1>
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Month)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Month)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Interest)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Interest) %
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.MonthlyOverDuePenalty)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.MonthlyOverDuePenalty) %
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="EditLoanPlan" class="btn btn-primary" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="ViewLoanPlan" class="btn btn-info" >Back to List</a>
+</div>

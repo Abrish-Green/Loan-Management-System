@@ -1,0 +1,40 @@
+﻿@model LoanManagementSystem.Models.LoanPlan
+
+@{
+    ViewData["Title"] = "Add Loan Plan";
+}
+
+<h1>Add Loan Plan</h1>
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-controller="Administrator" asp-action="CreateLoanPlan">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Month" class="control-label"></label>
+                <input asp-for="Month" class="form-control" />
+                <span asp-validation-for="Month" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Interest" class="control-label"></label>
+                <input asp-for="Interest" class="form-control" />
+                <span asp-validation-for="Interest" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MonthlyOverDuePenalty" class="control-label"></label>
+                <input asp-for="MonthlyOverDuePenalty" class="form-control" />
+                <span asp-validation-for="MonthlyOverDuePenalty" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+                <a class="btn btn-danger" asp-action="ViewLoanPlan">Cancel</a>
+
+            </div>
+        </form>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

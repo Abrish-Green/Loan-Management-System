@@ -1,0 +1,31 @@
+﻿@model LoanManagementSystem.Models.LoanType
+
+@{
+    ViewData["Title"] = "Details";
+    ViewBag.LoanTypeActive = "active";
+
+}
+
+<h1>Details</h1>
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.LoanTypeName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.LoanTypeName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.LoanDescription)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.LoanDescription)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="EditLoanType" class="btn btn-primary" asp-route-id="@Model.Id">Edit</a>
+    <a class="btn btn-info" asp-action="ViewLoanType">Back to List</a>
+</div>

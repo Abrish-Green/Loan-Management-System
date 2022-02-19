@@ -1,0 +1,60 @@
+﻿@{ 
+    ViewData["Title"] = "Report";
+    ViewBag.ReportActive = "active";
+}
+
+       <table class="table table-hover table-dark">
+          <thead>
+            <tr class="table-light">
+                <th colspan="2" class="text-center"><h5>@DateTime.Now.ToString("MMMM") Month Report</h5></th>
+            </tr>
+            
+          </thead>
+          <tbody>
+                         
+
+            <tr>
+              <td>Total Accepted loan Requests</td>
+              @if(TempData["AcceptedLoan"].Equals(0)){
+                   <td> <span>Empty</span> </td> 
+              }else{
+                    <td> @TempData["AcceptedLoan"] Loan</td>
+
+              }
+            </tr>
+            <tr>
+              <td>Total Rejected loan Requests</td>
+             
+                   @if(TempData["RejectedLoan"].Equals(0)){
+                       <td> <span>Empty</span></td>
+                   }else{
+                    <td>@TempData["RejectedLoan"] Loan</td>
+              }
+            </tr>
+            <tr>
+              <td>Total Covered loans</td>
+               @if(TempData["CoveredLoan"].Equals(0)){
+                       <td> <span>Empty</span></td>
+                   }else{
+              <td>@TempData["CoveredLoan"] Loan</td>
+              }
+            </tr>
+            <tr>
+              <td>Total Paid Loan Money</td>
+               @if(TempData["TotalMoneyPaid"].Equals(0)){
+                       <td> <span>Empty</span></td>
+                   }else{
+                       <td>@TempData["TotalMoneyPaid"] ETB</td>
+              }
+            </tr>
+            <tr>
+              <td>Total Paid Penalty</td>
+              @if(TempData["TotalMoneyPaid"].Equals(0)){
+                       <td> <span>Empty</span></td>
+                   }else{
+              <td>@TempData["TotalPenaltyMoney"] ETB</td>
+              }
+            </tr>
+       
+          </tbody>
+        </table>
