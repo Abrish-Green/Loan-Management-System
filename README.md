@@ -4,7 +4,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+    <img src="Screenshot 2022-02-19 at 11-25-00 Login - LoanManagementSystem.png" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center"> Loan Management System using .NET Core 5 EF, LINQ and MSSQL </h3>
