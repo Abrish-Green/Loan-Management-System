@@ -47,9 +47,18 @@
 
 
 <!-- ABOUT THE PROJECT -->
-## About The Project
+## Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+<img src="Screenshot 2022-02-19 at 11-25-00 Login - LoanManagementSystem.png" alt="Logo" width="300" height="400">
+<img src="Screenshot 2022-02-19 at 11-25-36 Login - LoanManagementSystem.png" alt="Logo" width="300" height="400">
+<img src="Screenshot 2022-02-19 at 11-26-17 Administrator - LoanManagementSystem.png" alt="Logo" width="300" height="400">
+<img src="Screenshot 2022-02-19 at 11-26-45 View Loan - LoanManagementSystem.png" alt="Logo" width="300" height="400">
+<img src="Screenshot 2022-02-19 at 11-27-19 Report - LoanManagementSystem.png" alt="Logo" width="300" height="400">
+<img src="Screenshot 2022-02-19 at 11-28-30 Customer - LoanManagementSystem.png" alt="Logo" width="300" height="400">
+<img src="Screenshot 2022-02-19 at 11-29-29 Loan - LoanManagementSystem.png" alt="Logo" width="300" height="400">
+
+
+
 
 There are many great README templates available on GitHub; however, I didn't find one that really suited my needs so I created this enhanced one. I want to create a README template so amazing that it'll be the last one you ever need -- I think this is it.
 
