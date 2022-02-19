@@ -1,14 +1,5 @@
 <div id="top"></div>
 
-[![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
-[![LinkedIn][linkedin-shield]][linkedin-url]
-
-
-
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
@@ -110,10 +101,7 @@ _Below is an example of how you can instruct your audience on installing and set
     Update-Database
    ```
 3. Install Nuget packages
-4. Enter your db connection name in `Program.js`
-   ```js
-   const API_KEY = 'ENTER YOUR API';
-   ```
+
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -179,7 +167,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 Abrham Muche - [@TheGreenHacker](https://tm.com/Abrish-green) - Abrham365Muche@gmail.com
 
-Project Link: [https://github.com/Abrish-Green/Web-Loan-Management-System-with-.Net-Core](https://github.com/Abrish-Green/Web-Loan-Management-System-with-.Net-Core/edit/main/README.md)
+Project Link: [https://github.com/Abrish-Green/Web-Loan-Management-System-with-.Net-Core](https://github.com/Abrish-Green/Web-Loan-Management-System-with-.Net-Core)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
