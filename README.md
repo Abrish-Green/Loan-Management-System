@@ -50,12 +50,12 @@
 ## Project
 
 <img src="Screenshot 2022-02-19 at 11-25-00 Login - LoanManagementSystem.png">
-<img src="Screenshot 2022-02-19 at 11-25-36 Login - LoanManagementSystem.png" alt="Logo" width="300" height="400">
-<img src="Screenshot 2022-02-19 at 11-26-17 Administrator - LoanManagementSystem.png" alt="Logo" width="300" height="400">
-<img src="Screenshot 2022-02-19 at 11-26-45 View Loan - LoanManagementSystem.png" alt="Logo" width="300" height="400">
-<img src="Screenshot 2022-02-19 at 11-27-19 Report - LoanManagementSystem.png" alt="Logo" width="300" height="400">
-<img src="Screenshot 2022-02-19 at 11-28-30 Customer - LoanManagementSystem.png" alt="Logo" width="300" height="400">
-<img src="Screenshot 2022-02-19 at 11-29-29 Loan - LoanManagementSystem.png" alt="Logo" width="300" height="400">
+<img src="Screenshot 2022-02-19 at 11-25-36 Login - LoanManagementSystem.png">
+<img src="Screenshot 2022-02-19 at 11-26-17 Administrator - LoanManagementSystem.png">
+<img src="Screenshot 2022-02-19 at 11-26-45 View Loan - LoanManagementSystem.png">
+<img src="Screenshot 2022-02-19 at 11-27-19 Report - LoanManagementSystem.png">
+<img src="Screenshot 2022-02-19 at 11-28-30 Customer - LoanManagementSystem.png">
+<img src="Screenshot 2022-02-19 at 11-29-29 Loan - LoanManagementSystem.png">
 
 
 
