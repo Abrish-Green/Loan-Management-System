@@ -10,7 +10,6 @@
   <h3 align="center"> Loan Management System using .NET Core 5 EF, LINQ and MSSQL </h3>
 
   <p align="center">
-    An awesome README template to jumpstart your projects!
     <br />
     <a href="https://github.com/othneildrew/Best-README-Template">View Demo</a>
   </p>
