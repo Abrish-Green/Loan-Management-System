@@ -105,4 +105,4 @@ Project Link: [https://github.com/Abrish-Green/Web-Loan-Management-System-with-.
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 
-* Student of Addis Aabab University Facality of IT
+* Student of Addis Ababa University Facality of IT
